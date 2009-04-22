@@ -10,15 +10,15 @@ Technologie : PHP 5 ,RSS 2.0
 
 
 partenaires dans /partenaire <br/>
-rss dans /rss
-images : /images/<nom_de_categorie>
-Format de csv par les fichiers :
-Nom de la compagnie ; website ; Url_image sur site centralise ; hauteur ; longeur 
-
+rss dans /rss <br/>
+images : /images/<nom_de_categorie> <br/>
+Format de csv par les fichiers : <br/>
+Nom de la compagnie ; website ; Url_image sur site centralise ; hauteur ; longeur <br/>
+<br/>
 *exemple :* Air Algérie ;	http://www.airalgerie.dz/ ; http://www.france-world-trade.com/partenaire/air/algerie.jpg;	70 ;	190
 
 
-
+<br/>
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
