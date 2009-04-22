@@ -1,5 +1,5 @@
+#summary synchronisation de flux Rss 2.0 sur plusieurs differents sites. (PHP5)
 #labels Phase-Deploy
-#sumarry synchronisation de flux Rss 2.0 sur plusieurs differents sites. (PHP5)
 = Introduction =
 
 Synchronisation Rss differents sites.
