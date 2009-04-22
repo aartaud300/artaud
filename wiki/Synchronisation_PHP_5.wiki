@@ -1,10 +1,10 @@
-#summary One-sentence summary of this page.
 #labels Phase-Deploy
+#Synchronisation de flux Rss 2.0 sur plusieurs differents sites. (PHP5)
 
 = Introduction =
 
 Synchronisation Rss differents sites.
-Technolgie : PHP 5 ,RSS 2.0
+Technologie : PHP 5 ,RSS 2.0
 
 = Details du déploiement de la solution=
 
