@@ -9,12 +9,21 @@ Aim : Share with colleagues unique version of Eclipse plugin
 
 = Requirements =
 Os : windows
-*Install on your system a JDK *
+1/ *Install on your system a JDK *
 _If you are have your JDK install on C:\Program~\Jre_
 then you can launch the script in standalone 
 
 *If you have install your JDK elsewhere take off the strokes quote on ligne 8 as bellow :*
 _SET JAVA=%JAVA_HOME%\bin\java.exe_
+
+2/ configure Eclipse Path 
+
+3/ Configure the equinox  jar path
+Change on the code the argument  : 
+org.eclipse.equinox.launcher_1.0.1.R33x_v20080118.jar 
+
+That's it ! 
+
 
 = Launching=
 Open a Cmd prompt on windows. 
