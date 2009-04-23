@@ -8,29 +8,29 @@ Aim : Share with colleagues unique version of Eclipse plugin
 
 
 = Requirements =
-Os : windows
-1/ *Install on your system a JDK *
-_If you are have your JDK install on C:\Program~\Jre_
-then you can launch the script in standalone 
+*Os : windows*<br/>
+1/ *Install on your system a JDK *<br/>
+_If you are have your JDK install on C:\Program~\Jre_<br/>
+then you can launch the script in standalone <br/>
 
 *If you have install your JDK elsewhere take off the strokes quote on ligne 8 as bellow :*
-_SET JAVA=%JAVA_HOME%\bin\java.exe_
+_SET JAVA=%JAVA_HOME%\bin\java.exe_<br/>
 
-2/ configure Eclipse Path 
+2/ configure Eclipse Path <br/>
 
-3/ Configure the equinox  jar path
-Change on the code the argument  : 
-org.eclipse.equinox.launcher_1.0.1.R33x_v20080118.jar 
+3/ Configure the equinox  jar path<br/>
+Change on the code the argument  : <br/>
+org.eclipse.equinox.launcher_1.0.1.R33x_v20080118.jar <br/>
 
 That's it ! 
 
 
 = Launching=
-Open a Cmd prompt on windows. 
-Syntax:
-retrieve-eclipse-plugin-site.bat arg1 arg2
-arg1: url of the plugin site
-arg2: Local path on windows machine
+Open a Cmd prompt on windows. <br/>
+Syntax:<br/>
+retrieve-eclipse-plugin-site.bat arg1 arg2 <br/>
+arg1: url of the plugin site <br/>
+arg2: Local path on windows machine <br/>
 
 = Example Launching =
 C:\>retrieve-eclipse-plugin-site.bat http://pmd.sourceforge.net/eclipse/ C:\mirr
