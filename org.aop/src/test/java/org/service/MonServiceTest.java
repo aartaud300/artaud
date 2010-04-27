@@ -30,7 +30,10 @@ public class MonServiceTest {
 		//ApplicationContext context = new ClassPathXmlApplicationContext( new String[] {"springContext.xml"} );
 		//MonService monService = (MonService) context.getBean("monService");
 		//monService.hello("from Spring !");
-		vMonService.hello("this is a hello from Spring AOP Frmaework ");
+		String titit = vMonService.hello("this is a hello from Spring AOP Frmaework ");
+		
+		
+		String toto = vMonService.hello("Hello from Antoine !!! ");
 
 	}
 
