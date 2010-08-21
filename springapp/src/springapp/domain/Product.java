@@ -4,7 +4,16 @@ import java.io.Serializable;
 
 public class Product implements Serializable {
 
-    private String description;
+	private int id ; 
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	private String description;
     private Double price;
     
     public String getDescription() {
