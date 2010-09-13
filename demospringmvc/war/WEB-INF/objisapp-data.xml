@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--  Déclaration du PropertyPlaceholderConfigurer -->
+	 <bean id="propertyConfigurer" 
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath*:db.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    
+<!--  Déclaration de la DATASOURCES -->
+	
+	<bean id="dataSource" destroy-method="close"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+
+
+<!--  Déclaration des DAO JDBC-->
+
+	<bean id="jdbcEmployeDaoSupport"
+		class="com.objis.springmvcdemo.dao.JdbcEmployeDaoSupport">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+
+</beans>
