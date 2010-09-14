@@ -14,9 +14,6 @@
 	
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" p:basenames="errors"/>
 	
-	 
-    
-	
 	<!-- Controleur pour formulaire d'identification-->
 	
 	<bean id="simpleUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
