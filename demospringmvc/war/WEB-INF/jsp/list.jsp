@@ -2,10 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>ezezezezezezzezezezeezez TOITITITITI </title>
+<title> TOITITITITI </title>
 </head>
 <body>
-<h2>ezezezezezezzezezezeezezIls vont vous faire aimer Java :</h2>
+<h2>vont vous faire aimer Java :</h2>
 <ul>
 	<c:forEach items="${employes}" var="employe">
 		<li>

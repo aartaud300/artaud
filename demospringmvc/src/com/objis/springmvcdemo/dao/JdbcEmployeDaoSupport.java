@@ -8,15 +8,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.objis.springmvcdemo.dao.IEmployeDao;
 import com.objis.springmvcdemo.dao.mapper.EmployeMapperByLogin;
 import com.objis.springmvcdemo.domaine.Employe;
 
-
-
+/**
+ * 
+ * @author artaud
+ *
+ */
 public class JdbcEmployeDaoSupport extends JdbcDaoSupport implements IEmployeDao{
 
+
+	/**
+	 * request the firest name and name form login passed in parameter.
+	 * Classic way to make RowMapper with plan Sql using simple JDBC Template
+	 *  
+	 * note : EmployeMapperByLogin
+	 * @author artaud antoine .
+	 */
+	public Employe getEmployeByLogin(String login) {
+		// recupération d'un employé en fonction de son login
+		String sql = "select nom,prenom from employe where login = ?";
+		return (Employe) getJdbcTemplate().queryForObject(sql, new Object[] { String.valueOf(login) }, new EmployeMapperByLogin());
+	}
 	
 	
 	public void saveEmploye(Employe employe) {
@@ -62,15 +79,7 @@ public class JdbcEmployeDaoSupport extends JdbcDaoSupport implements IEmployeDao
 
 	
 	}
-	/**
-	 * request the firest name and name form login passed in parameter.
-	 * note : EmployeMapperByLogin
-	 */
-	public Employe getEmployeByLogin(String login) {
-		// recupération d'un employé en fonction de son login
-		String sql = "select nom,prenom from employe where login = ?";
-		return (Employe) getJdbcTemplate().queryForObject(sql, new Object[] { String.valueOf(login) }, new EmployeMapperByLogin());
-	}
+
 
 	public int getEmployesCount() {
 		final String EMPLOYE_COUNT = "select count(*) from employe";
