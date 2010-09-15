@@ -22,10 +22,12 @@ public class FormulaireInscriptionController {
 	@RequestMapping(method= RequestMethod.GET,value="/enregistrement")
 	public void form(Model model){
 		model.addAttribute("employe",new Employe());
+		
 	}
 	
 	@RequestMapping(method= RequestMethod.POST)
 	public String enregistrementDonneesFormulaire(Employe employe){
+		
 		log.info("Enregistrement employe "+ employe );
 		
 		return "merci";

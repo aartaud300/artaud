@@ -32,7 +32,8 @@ public class PlatService implements IPlatService{
 
 	@Override
 	public void persist(Plat transientInstance) {
-		// TODO Auto-generated method stub
+		System.out.println("Entree dans la couche Service Formulaire");
+		mPlatDao.persist(transientInstance);
 		
 	}
 
