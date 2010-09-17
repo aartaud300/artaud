@@ -1,16 +1,20 @@
 package message;
 
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.integration.Message;
 import org.springframework.integration.channel.DirectChannel;
-import org.springframework.integration.core.PollableChannel;
-import org.springframework.integration.support.MessageBuilder;
+import org.springframework.integration.channel.PollableChannel;
+import org.springframework.integration.core.Message;
+import org.springframework.integration.message.MessageBuilder;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit38.AbstractJUnit38SpringContextTests;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 //@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = false)
@@ -24,17 +28,30 @@ public class TestMessage {
 	@Autowired
 	DirectChannel  input ; 
 	
+//	@Autowired
+//	IMessage messageTransformer ; 
+	
 	@Autowired
 	PollableChannel output; 
 	
 	@Test
-	public void testbidon(){
-		String message ="Sending message to Spring integration";
+	public void testSeeder(){
 		
+		List<Message<?>> messages = new ArrayList<Message<?>>();
+		String message ="Sending message No :";
 		//create a Message with a new payload
-		input.send(MessageBuilder.withPayload(message).build());
-		
-		Message<?> T = output.receive();
-		System.out.println("=>>" + T);
+		for(int i=0;i<10;i++){
+			input.send(MessageBuilder.withPayload(message+" "+i).build());
+			Message<?> T = output.receive();
+			System.out.println("=>>" + T.toString());
+			
+			if(T!=null)
+				messages.add(T);
+		}
+	
+		//test if we received our 10 messages .
+		assertThat(messages.size(), is(10));
 	}
+	
+	
 }
