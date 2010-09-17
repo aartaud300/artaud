@@ -24,34 +24,36 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class TestMessage {
 
-	
+
 	@Autowired
 	DirectChannel  input ; 
-	
-//	@Autowired
-//	IMessage messageTransformer ; 
-	
+
 	@Autowired
-	PollableChannel output; 
-	
+	IMessageExchanger exchanger; 
+
+	@Autowired
+	PollableChannel inputExterieur; 
+
 	@Test
 	public void testSeeder(){
-		
+
 		List<Message<?>> messages = new ArrayList<Message<?>>();
 		String message ="Sending message No :";
 		//create a Message with a new payload
 		for(int i=0;i<10;i++){
+			exchanger.messageExpose("mon message");
 			input.send(MessageBuilder.withPayload(message+" "+i).build());
-			Message<?> T = output.receive();
-			System.out.println("=>>" + T.toString());
-			
+			Message<?> T = inputExterieur.receive();
+
+			//System.out.println("=>>" + T.toString());
+
 			if(T!=null)
 				messages.add(T);
 		}
-	
+
 		//test if we received our 10 messages .
 		assertThat(messages.size(), is(10));
 	}
-	
-	
+
+
 }
