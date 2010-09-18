@@ -180,6 +180,7 @@
 	            <batchtest>
 	                <fileset dir="${build.dir}">
 	                    <include name="**/*Tests.*"/>
+	                	   <include name="**/*Test.*"/>
 	                	<exclude name="**/Jdbc*Tests.*"/>
 	                </fileset>
 	            </batchtest>
