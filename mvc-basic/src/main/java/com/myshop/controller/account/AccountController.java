@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc.basic.account;
+package com.myshop.controller.account;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

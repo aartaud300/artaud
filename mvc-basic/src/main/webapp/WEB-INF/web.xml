@@ -21,8 +21,11 @@
 		<filter-name>characterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
-	<!-- Enables clean URLs with JSP views e.g. /welcome instead of /app/welcome -->
+
+	<!--
+		Enables clean URLs with JSP views e.g. /welcome instead of
+		/app/welcome
+	-->
 	<filter>
 		<filter-name>UrlRewriteFilter</filter-name>
 		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
@@ -41,10 +44,20 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
 				/WEB-INF/spring/app-config.xml
+		
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/META-INF/spring/myshop-data.xml
+		</param-value>
+
+	</context-param>
 
 	<servlet-mapping>
 		<servlet-name>Spring MVC Dispatcher Servlet</servlet-name>

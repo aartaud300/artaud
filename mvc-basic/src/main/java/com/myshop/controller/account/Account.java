@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc.basic.account;
+package com.myshop.controller.account;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,7 +16,7 @@ public class Account {
 	
 	private Long id;
 	
-	@NotNull
+	@NotNull(message="balance shouldndt be null man ")
 	@Size(min=1, max=25)
 	private String name;
 	

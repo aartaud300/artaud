@@ -1,4 +1,4 @@
-package org.springframework.samples.mvc.basic.account;
+package com.myshop.controller.plate;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
