@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.myshop.domain.plate.Plat;
 
+
 /**
  * Home object for domain model class Plat.
  * @see com.myshop.domain.plate.Plat
