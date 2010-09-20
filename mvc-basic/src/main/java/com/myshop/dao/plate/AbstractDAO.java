@@ -9,7 +9,6 @@ import javax.persistence.PersistenceUnit;
 
 import org.springframework.orm.jpa.JpaTemplate;
 
-import com.myshop.domain.plate.Plat;
 
 public abstract class AbstractDAO<T>  {
         
@@ -21,7 +20,7 @@ public abstract class AbstractDAO<T>  {
                 return entityClass;
         }
         
-        @PersistenceContext
+        @PersistenceUnit
         public void setEntityManagerFactory(EntityManagerFactory emf) {
                 this.jpaTemplate = new JpaTemplate(emf);
         }
