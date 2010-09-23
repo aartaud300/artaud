@@ -12,7 +12,12 @@
 		<org.slf4j.version>1.5.10</org.slf4j.version>
 	</properties>
 	<dependencies>
-
+ 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.9</version>
+		</dependency>
 		<!--  Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -31,7 +36,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
-
+ 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
@@ -42,7 +47,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${org.springframework.version}</version>
 		</dependency>
-
+ 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -82,7 +87,7 @@
 			<version>1.2.16</version>
 			<scope>runtime</scope>
 		</dependency>
-
+ 
 		<!--  JSR 303 with Hibernate Validator -->
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -94,7 +99,7 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.0.2.GA</version>
 		</dependency>
-
+ 
 		<!--  Joda Time -->
 		<dependency>
 			<groupId>joda-time</groupId>
@@ -108,14 +113,14 @@
 			<version>1.0.2</version>
 			<scope>runtime</scope>
 		</dependency>
-
+ 
 		<!--  URL Rewrite -->
 		<dependency>
 			<groupId>org.tuckey</groupId>
 			<artifactId>urlrewritefilter</artifactId>
 			<version>3.1.0</version>
 		</dependency>
-
+ 
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -134,7 +139,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
+ 
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -143,12 +148,24 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.test</artifactId>
+			<version>3.0.0.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>persistence-api</artifactId>
 			<version>1.0</version>
 		</dependency>
-		
-		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.4.0.GA</version>
+		</dependency>
+ 
+ 
 	</dependencies>
 	<repositories>
 		<!-- For Hibernate Validator -->
@@ -181,7 +198,7 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-
+ 
 		<!-- For Rome -->
 		<repository>
 			<id>maven2-repository.dev.java.net</id>
