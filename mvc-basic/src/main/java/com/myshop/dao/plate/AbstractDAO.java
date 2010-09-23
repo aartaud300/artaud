@@ -3,11 +3,10 @@ package com.myshop.dao.plate;
 import java.util.Collection;
 
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 import javax.persistence.PersistenceUnit;
 
 import org.springframework.orm.jpa.JpaTemplate;
+import org.springframework.transaction.annotation.Transactional;
 
 
 public abstract class AbstractDAO<T>  {
@@ -37,8 +36,14 @@ public abstract class AbstractDAO<T>  {
                 return jpaTemplate.find("from " + entityClass.getSimpleName());
         }
 
+       @Transactional
         public void persist(T t) {
+        	System.out.println(">>>>>>>>> tititititit"+t.toString());
     		jpaTemplate.persist(t);
+    	
+    		//jpaTemplate.flush();
+    		System.out.println("Fin ");
+    	
     	}
         
         public T getById(Long id) {
@@ -79,5 +84,13 @@ public abstract class AbstractDAO<T>  {
         public void update(T t) {
                 jpaTemplate.merge(t);
         }
+
+		public JpaTemplate getJpaTemplate() {
+			return jpaTemplate;
+		}
+
+		public void setJpaTemplate(JpaTemplate jpaTemplate) {
+			this.jpaTemplate = jpaTemplate;
+		}
 
 }

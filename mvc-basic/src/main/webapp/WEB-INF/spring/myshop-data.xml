@@ -62,6 +62,10 @@
 		Indique a Spring que la configuration des beans se fait par
 		annotations
 	-->
+	<context:component-scan base-package="com.myshop">
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
 	<context:annotation-config />
-	<context:component-scan base-package="com.myshop" />
+	
 </beans>

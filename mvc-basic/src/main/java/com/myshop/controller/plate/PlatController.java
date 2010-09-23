@@ -21,7 +21,7 @@ import com.myshop.service.plate.IPlateService;
 @RequestMapping(value="/plat")
 public class PlatController {
 	
-	private Map<Long, Plat> plats = new ConcurrentHashMap<Long, Plat>();
+	private Map<Integer, Plat> plats = new ConcurrentHashMap<Integer, Plat>();
 	
 	@Autowired
 	@Qualifier("platService")
@@ -40,10 +40,15 @@ public class PlatController {
 			return "plat/createForm";
 		}
 		
+		
 		//this.plats.put(plat.assignId(), plat);
+		System.out.println("==========================     "+plat.toString());
 		mPlatService.persist(plat);
-		return "redirect:/plat/" + plat.getId();
+		return "plat/confirmation";
 	}
+	
+	
+	
 	
 	@RequestMapping(value="{id}", method=RequestMethod.GET)
 	public String getView(@PathVariable Long id, Model model) {

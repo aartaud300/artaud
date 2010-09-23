@@ -4,6 +4,7 @@ package com.myshop.dao.plate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.myshop.domain.plate.Plat;

@@ -2,6 +2,9 @@ package com.myshop.domain.plate;
 
 // Generated 19 sept. 2010 16:22:35 by Hibernate Tools 3.2.4.GA
 
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -68,4 +71,16 @@ public class Plat implements java.io.Serializable {
 		this.type = type;
 	}
 
+	public AtomicInteger assignId() {
+		this.id = idSequence.incrementAndGet();
+		return idSequence;
+	}
+
+	private static final AtomicInteger idSequence = new AtomicInteger();
+
+	@Override
+	public String toString() {
+		return "Plat [description=" + description + ", id=" + id + ", nomPlat="
+				+ nomPlat + ", type=" + type + "]";
+	}
 }
