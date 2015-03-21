@@ -1,0 +1,3 @@
+All developers/engineers (with or without experience) you can use resources here as a good start point.
+In this plateform you can found some basic code for having a quickstart in Java frameworks (Tapestry5, Struts 2,Spring, Hibernate), Perl, Python,Shell script,C#,.NET, langage C, C++ ...
+Have fun geeeks ;)
